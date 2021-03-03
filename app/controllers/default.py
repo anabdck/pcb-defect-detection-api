@@ -1,26 +1,12 @@
 from flask import Flask, request, render_template
 from app import app
 import time
-
-## a partir desses, adicionar no venv
 from app.controllers import detection
 from werkzeug.utils import secure_filename
 import os
 from flask import flash, redirect, url_for
 from flask import Response, jsonify, send_from_directory, abort
 from zipfile import ZipFile
-
-"""
-from absl import logging
-import cv2
-import numpy as np
-import tensorflow as tf
-from yolov3_tf2.models import (YoloV3, YoloV3Tiny)
-from yolov3_tf2.dataset import transform_images, load_tfrecord_dataset
-from yolov3_tf2.utils import draw_outputs
-from flask import send_from_directory
-from flask import render_template
-"""
 
 UPLOAD_FOLDER = './app/static/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}

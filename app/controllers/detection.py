@@ -1,8 +1,5 @@
 from app.controllers.Darknet import darknet
 from app.controllers.Darknet import darknet_images
-
-#from Darknet import darknet
-#from Darknet import darknet_images
 import os
 from PIL import Image
 import time
