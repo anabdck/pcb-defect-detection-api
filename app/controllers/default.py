@@ -68,15 +68,13 @@ def darknetdetections(image_name):
     files.append(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+".txt"))
     files.append(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+'_defeitos.jpg'))
 
-    print('Following files will be zipped:')
-    for file_name in files:
-        print(file_name)
+    #with ZipFile('/home/ana/github/pcb-defect-detection-api/app/static/resultados.zip','w') as zip:
+    with ZipFile(os.path.join(app.config['UPLOAD_FOLDER'], 'resultados.zip'),'w') as zip:
 
-    with ZipFile('/home/ana/github/pcb-defect-detection-api/app/static/resultados.zip','w') as zip:
         for file in files:
             zip.write(file)
 
-    print('All files zipped successfully!')
+    print('🦖 Arquivos zipados!')
 
     os.remove(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+".txt"))
     os.remove(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+'_defeitos.jpg'))

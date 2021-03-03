@@ -13,7 +13,11 @@ import cv2
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 DARKNET_ROOT = os.path.join(APP_ROOT, 'Darknet/')
 
-image_path = '/home/ana/github/pcb-defect-detection-api/app/static/'
+image_path = os.path.join(os.getcwd(), 'app/static')
+
+print("\n")
+print(image_path)
+print("\n")
 
 darknet.set_gpu(0)
 
@@ -24,8 +28,7 @@ network, class_names, class_colors = darknet.load_network(
     weights=DARKNET_ROOT + 'yolov4_custom.weights'
 )
 t2 = time.time()
-print("\n🦆 tempo de carregamento da rede neural: {:.2f}".format(t2 - t1) + " segundos 🦖")
-
+print("🦖 tempo de carregamento: {:.2f}".format(t2 - t1) + " segundos")
 class_colors = {
     'circuito aberto': (154, 178, 129),
     'curto-circuito': (143, 204, 242),
@@ -39,7 +42,7 @@ def detect(image_name):
     t1 = time.time()
 
     image, detections = darknet_images.image_detection(
-        image_path=image_path+image_name,
+        image_path=image_path+'/'+image_name,
         #image_path='/home/ana/github/pcb-defect-detection-api/app/static/01_teste.JPG',
         network=network,
         class_names=class_names,
@@ -49,18 +52,20 @@ def detect(image_name):
 
     t2 = time.time()
 
-    print("\n🦆 tempo de processamento da detecção: {:.2f}".format(t2 - t1) + " segundos 🦖")
     darknet.print_detections(detections)
 
     darknet_images.save_annotations(
-        name=image_path+image_name,
+        name=image_path+'/'+image_name,
         image=image,
         detections=detections,
         class_names=class_names
     )
 
-    cv2.imwrite(image_path + str.split(image_name, ".")[0]+'_defeitos.jpg', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
-    cv2.imwrite(image_path+ 'temp.jpg', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    cv2.imwrite(image_path+'/'+str.split(image_name, ".")[0]+'_defeitos.jpg', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+    cv2.imwrite(image_path+'/'+'temp.jpg', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
 
+    print("🦖 tempo de processamento: {:.2f}".format(t2 - t1) + " segundos")
+    print('🦖 imagem salva: '+image_path+'/'+str.split(image_name, ".")[0]+'_defeitos.jpg')
+    print('🦖 anotações salvas: '+image_path+'/'+str.split(image_name, ".")[0]+'.txt')
 
     return len(detections), (t2 - t1)
