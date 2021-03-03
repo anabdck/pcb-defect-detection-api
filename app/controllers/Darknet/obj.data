@@ -1,0 +1,5 @@
+classes = 6
+train = train.txt
+valid = test.txt
+names = /home/ana/github/pcb-defect-detection-api/app/controllers/Darknet/obj.names
+backup = backup/

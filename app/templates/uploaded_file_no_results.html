@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ super() }} Index{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-12 my-auto">
+      <div class="row text-center">
+
+      <div class="w-100 my-4"></div>
+        <div class="text-center text-primary">
+          <h1 class="display-4">Resultado da Detecção</h1>
+          <div class="w-100 my-4"></div>
+          <img src="{{ url_for('static', filename=image_name) }}" class="img-fluid rounded" alt="Resultado da Detecção">
+          <!img src=" {{ url_for('static', filename=image_name) }}" alt="Resultado" width="800" "-->
+        </div>
+      <div class="w-100 my-4"></div>
+      </div>
+
+      <div class="alert alert-secondary" role="alert">
+        {{ alerta }}
+      </div>
+      <button type="button" class="btn btn-secondary btn-lg btn-block" disabled>Download dos Resultados</button>
+      <a href="../" class="btn btn-light btn-lg btn-block" role="button" aria-pressed="true">Fazer outra detecção</a>
+
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

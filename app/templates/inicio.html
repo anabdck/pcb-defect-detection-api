@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+    <header class="bg-primary">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12">
+                    <div class="text-center m-0 vh-100 d-flex flex-column justify-content-center text-light">
+                        <h1 class="display-4">detecção de defeitos em PCBs</h1>
+                        <p class="lead">faça o upload de uma imagem de PCB sem componentes soldados para fazer a detecção de defeitos de fabricação utilizando redes neurais</p>
+
+
+                        <!--form method=post enctype=multipart/form-data>
+                          <div class="col-lg-4 col-sm-6 mx-auto">
+                            <input type="file" class="custom-file-input" id="customFile" name=file>
+                            <label type=submit class="custom-file-label" for="customFile" value=Upload>Escolha a imagem</label>
+                          </div>
+                        </form-->
+
+                        <form method=post enctype=multipart/form-data>
+                          <input type=file name=file class="btn btn-light btn-lg">
+                          <input type=submit value=Upload class="btn btn-light btn-lg">
+                        </form>
+                        <!--
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6 mx-auto">
+                                <div class="input-group mb-3">
+                                  <input type="text" class="form-control form-control-lg" placeholder="your@email">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-outline-light btn-lg rounded-right" type="button">Sign-up</button>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<section class="container h-50">
+  <div class="row h-50">
+    <div class="col-12">
+      <div class="text-center m-0 vh-100 d-flex flex-column justify-content-center text-secondary">
+        <h2 class="display-5">... ou escolha uma das fotos do nosso</h2>
+        <h2 class="display-5">banco de dados para fazer a detecção</h2>
+        <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Escolha uma Placa
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/darknetdetections/161803399-variados.jpg">placa com defeitos variados</a>
+            <a class="dropdown-item" href="/darknetdetections/161803399-curto.jpg">placa com defeitos de curto-circuito</a>
+            <a class="dropdown-item" href="/darknetdetections/161803399-circuito_aberto.jpg">placa com defeitos de circuito aberto</a>
+            <a class="dropdown-item" href="/darknetdetections/161803399-cobre.jpg">placa com defeitos de trilha voadora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--div class="container">
+  <form method=post enctype=multipart/form-data>
+    <div class="row justify-content-md-center align-self-center">
+      <div class="col-lg-3">
+        <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Escolha uma Placa
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Alguma ação</a>
+            <a class="dropdown-item" href="#">Outra ação</a>
+            <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <button type=button value=Upload class="btn btn-light btn-lg"> Upload </button>
+      </div>
+    </div>
+  </form>
+</div-->
+{% endblock %}
