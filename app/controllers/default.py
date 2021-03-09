@@ -19,16 +19,12 @@ def allowed_file(filename):
 
 @app.route("/index", methods=["GET", "POST"])
 @app.route("/", methods=["GET", "POST"])
-#@app.route("/pato-pato-ganso", methods=["GET", "POST"])
 def upload_file():
     if request.method == 'POST':
-        # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
             return redirect(request.url)
         file = request.files['file']
-        # if user does not select file, browser also
-        # submit an empty part without filename
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
@@ -45,22 +41,18 @@ def upload_file():
 def darknetdetections(image_name):
 
     numero_defeitos, tempo = detection.detect(image_name)
-    #image_name = str.split(image_name, ".")[0] + '_detection' + '.jpg'
 
     alerta = " "
-
     files = []
 
     files.append(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+".txt"))
     files.append(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+'_defeitos.jpg'))
 
-    #with ZipFile('/home/ana/github/pcb-defect-detection-api/app/static/resultados.zip','w') as zip:
     with ZipFile(os.path.join(app.config['UPLOAD_FOLDER'], 'resultados.zip'),'w') as zip:
-
         for file in files:
             zip.write(file)
 
-    print('🦖 Arquivos zipados!')
+    print('🦖 arquivos compactados 🦖')
 
     os.remove(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+".txt"))
     os.remove(os.path.join(app.config['UPLOAD_FOLDER'], str.split(image_name, ".")[0]+'_defeitos.jpg'))

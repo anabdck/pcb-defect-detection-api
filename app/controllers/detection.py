@@ -12,10 +12,6 @@ DARKNET_ROOT = os.path.join(APP_ROOT, 'Darknet/')
 
 image_path = os.path.join(os.getcwd(), 'app/static')
 
-print("\n")
-print(image_path)
-print("\n")
-
 darknet.set_gpu(0)
 
 t1 = time.time()
