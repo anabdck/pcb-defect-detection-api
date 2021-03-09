@@ -1,6 +1,8 @@
 # pcb-defect-detection-api
 
-## darknet
+![4](/app/static/4.jpg)
+
+### compilando darknet
 `git clone https://github.com/AlexeyAB/darknet.git`
 
 `cd Darknet`
@@ -14,7 +16,7 @@
 `make`
 
 
-## API
+### API
 `cd ../`
 
 `git clone https://github.com/anabdck/pcb-defect-detection-api.git`
@@ -33,7 +35,13 @@
 
 `python3 run.py runserver`
 
-![4](/app/static/4.jpg)
+### Página Inicial 1
 ![1](/app/static/1.png)
+
+
+### Página Inicial 2
 ![2](/app/static/2.png)
+
+
+### resultados
 ![3](/app/static/3.png)
