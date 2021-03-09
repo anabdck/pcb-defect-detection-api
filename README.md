@@ -14,7 +14,7 @@
 `make`
 
 
-## venv
+## API
 `cd ../`
 
 `git clone https://github.com/anabdck/pcb-defect-detection-api.git`
@@ -32,3 +32,8 @@
 `cp ../Darknet/libdarknet.so libdarknet.so`
 
 `python3 run.py runserver`
+
+![4](/app/static/4.png)
+![1](/app/static/1.png)
+![2](/app/static/2.png)
+![3](/app/static/3.png)
