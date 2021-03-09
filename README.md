@@ -33,7 +33,7 @@
 
 `python3 run.py runserver`
 
-![4](/app/static/4.png)
+![4](/app/static/4.jpg)
 ![1](/app/static/1.png)
 ![2](/app/static/2.png)
 ![3](/app/static/3.png)
