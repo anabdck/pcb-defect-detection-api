@@ -33,7 +33,7 @@
 
 `cp ../Darknet/libdarknet.so libdarknet.so`
 
-`python3 run.py runserver`
+`python run.py runserver --host 0.0.0.0`
 
 ### Página Inicial 1
 ![1](/app/static/1.png)
