@@ -256,9 +256,11 @@ if os.name == "nt":
             lib = CDLL(winGPUdll, RTLD_GLOBAL)
             print("Environment variables indicated a CPU run, but we didn't find {}. Trying a GPU run anyway.".format(winNoGPUdll))
 else:
-    #curDir = os.path.dirname(os.path.abspath(__file__))
-    #libPath = os.path.join(curDir, 'libdarknet.so')
-    lib = CDLL("./app/controllers/Darknet/libdarknet.so", RTLD_GLOBAL)
+    curDir = os.path.dirname(os.path.abspath(__file__))
+    libPath = os.path.join(curDir, 'libdarknet.so')
+    lib_path = '/home/ana/github/pcb-defect-detection-api/app/controllers/Darknet/libdarknet.so'
+    #lib_path = "./app/controllers/Darknet/libdarknet.so"
+    lib = CDLL(lib_path, RTLD_GLOBAL)
 
     #lib = #CDLL(os.path.join(
         #os.environ.get('DARKNET_PATH', './'),
