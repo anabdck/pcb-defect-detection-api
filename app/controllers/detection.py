@@ -41,7 +41,7 @@ def detect(image_name):
     t1 = time.time()
     image, detections = darknet_images.image_detection(
         #image_path=image_path+'/'+image_name,
-        image_path='/home/ana/github/pcb-defect-detection-api/app/static/161803399-variados.jpg',
+        image_path='/home/pcb/pcb-defect-detection-api/app/static/161803399-variados.jpg',
         #image_path='../static/161803399-variados.jpg',
         network=network,
         class_names=class_names,
