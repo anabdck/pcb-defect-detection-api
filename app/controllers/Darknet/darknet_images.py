@@ -6,9 +6,9 @@ import random
 import time
 import cv2
 import numpy as np
-#from app.controllers.Darknet import darknet
+from app.controllers.Darknet import darknet
 
-from Darknet import darknet
+#from Darknet import darknet
 
 
 def parser():

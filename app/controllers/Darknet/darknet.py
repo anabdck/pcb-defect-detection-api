@@ -258,8 +258,8 @@ if os.name == "nt":
 else:
     curDir = os.path.dirname(os.path.abspath(__file__))
     libPath = os.path.join(curDir, 'libdarknet.so')
-    lib_path = '/home/pcb/pcb-defect-detection-api/app/controllers/Darknet/libdarknet.so'
-    #lib_path = "./app/controllers/Darknet/libdarknet.so"
+    #lib_path = '/home/pcb/pcb-defect-detection-api/app/controllers/Darknet/libdarknet.so'
+    lib_path = "./app/controllers/Darknet/libdarknet.so"
     lib = CDLL(lib_path, RTLD_GLOBAL)
 
     #lib = #CDLL(os.path.join(
