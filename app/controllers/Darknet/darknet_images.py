@@ -2,14 +2,10 @@ import argparse
 import os
 import glob
 import random
-#import darknet
 import time
 import cv2
 import numpy as np
 from app.controllers.Darknet import darknet
-
-#from Darknet import darknet
-
 
 def parser():
     parser = argparse.ArgumentParser(description="YOLO Object Detection")
@@ -115,7 +111,6 @@ def image_detection(image_path, network, class_names, class_colors, thresh):
     darknet.copy_image_from_bytes(darknet_image, image_resized.tobytes())
     detections = darknet.detect_image(network, class_names, darknet_image, thresh=thresh)
     darknet.free_image(darknet_image)
-    #image = darknet.draw_boxes(detections, image_resized, class_colors)
     image = darknet.draw_boxes_anana(detections, image, class_colors, network) #alteração da ana banana
     return cv2.cvtColor(image, cv2.COLOR_BGR2RGB), detections
 
