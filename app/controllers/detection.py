@@ -32,7 +32,7 @@ class_colors = {
     'curto-circuito': (143, 204, 242),
     'falta de cobre': (95, 122, 224),
     'cobre excessivo': (231, 213, 182),
-    'trilha voadora': (95, 122, 224),
+    'trilha desconectada': (95, 122, 224),
     'sem estanho': (169, 148, 255)
 }
 
