@@ -31,7 +31,7 @@
 
 `pip3 install -r requirements.txt`
 
-`cp ../Darknet/libdarknet.so libdarknet.so`
+`cp ../Darknet/libdarknet.so app/controllers/Darknet/libdarknet.so`
 
 `python run.py runserver --host 0.0.0.0`
 
