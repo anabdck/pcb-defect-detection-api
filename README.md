@@ -2,10 +2,15 @@
 
 ![4](/app/static/4.jpg)
 
+### Requisitos
+`Python3`
+
+`OpenCV (sudo apt install libopencv-dev)`
+
 ### compilando darknet
 `git clone https://github.com/AlexeyAB/darknet.git`
 
-`cd Darknet`
+`cd darknet`
 
 `sed -i 's/OPENCV=0/OPENCV=1/' Makefile`
 
