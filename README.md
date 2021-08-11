@@ -3,9 +3,7 @@
 ![4](/app/static/4.jpg)
 
 ### Requisitos
-`Python3`
-
-`OpenCV (sudo apt install libopencv-dev)`
+`Python3`, `libopencv-dev`
 
 ### compilando darknet
 `git clone https://github.com/AlexeyAB/darknet.git`
